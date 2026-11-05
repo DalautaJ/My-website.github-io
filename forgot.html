@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forgot Password | SecureServer.edu</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="rain"></canvas>
+<div class="login-page">
+  <div class="box" id="tilt">
+    <i class="beam"></i>
+    <div class="radar"><span class="sweep"></span><b>🛡️</b></div>
+    <h1 class="glitch" data-text="RESET ACCESS">RESET ACCESS</h1>
+    <p class="s">Enter your username or email to get a reset link</p>
+    <form id="forgotForm" autocomplete="off">
+      <label for="user">👤 Username or email</label>
+      <input type="text" id="user" placeholder="agent_name or you@example.com" maxlength="100">
+      <div class="err" id="err"></div>
+      <button class="btn" type="submit">CREATE RESET LINK</button>
+      <div class="okmsg" id="res"></div>
+      <p class="links2"><a href="login.html">← Back to login</a></p>
+    </form>
+  </div>
+</div>
+<div class="ticker"><div class="track"><span>🔒 PASSWORDS HASHED WITH BCRYPT &nbsp;•&nbsp; 🛡️ FIREWALL ACTIVE &nbsp;•&nbsp; 🗄️ DATABASE PROTECTED &nbsp;•&nbsp; 🔑 MFA READY &nbsp;•&nbsp; 🧱 RATE LIMITING ON &nbsp;•&nbsp; </span><span>🔒 PASSWORDS HASHED WITH BCRYPT &nbsp;•&nbsp; 🛡️ FIREWALL ACTIVE &nbsp;•&nbsp; 🗄️ DATABASE PROTECTED &nbsp;•&nbsp; 🔑 MFA READY &nbsp;•&nbsp; 🧱 RATE LIMITING ON &nbsp;•&nbsp; </span></div></div>
+<script src="script.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>

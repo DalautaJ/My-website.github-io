@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login | SecureServer.edu</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="rain"></canvas>
+<div class="login-page">
+  <div class="box" id="tilt">
+    <i class="beam"></i>
+    <div class="radar"><span class="sweep"></span><b>🛡️</b></div>
+    <h1 class="glitch" data-text="SECURE LOGIN">SECURE LOGIN</h1>
+    <p class="s">Authenticate to access the training portal</p>
+    <div class="okmsg" id="okmsg"></div>
+    <form id="loginForm" autocomplete="off">
+      <label for="user">👤 Username or email</label>
+      <input type="text" id="user" placeholder="agent_name" maxlength="100">
+      <label for="pw">🔑 Password</label>
+      <div class="field"><input type="password" id="pw" placeholder="••••••••" maxlength="200"><span class="eye" id="eye">👁️</span></div>
+      <div class="err" id="err"></div>
+      <button class="btn" type="submit">AUTHENTICATE</button>
+      <p class="links2"><a href="forgot.html">Forgot password?</a> &nbsp;•&nbsp; <a href="signup.html">Sign up</a></p>
+    </form>
+    <div id="loader">
+      <div class="ring"></div>
+      <div id="status">Initializing…</div>
+      <div class="bar"><i id="lfill"></i></div>
+      <ul id="log"></ul>
+    </div>
+  </div>
+</div>
+<div class="ticker"><div class="track"><span>🔒 PASSWORDS HASHED WITH BCRYPT &nbsp;•&nbsp; 🛡️ FIREWALL ACTIVE &nbsp;•&nbsp; 🗄️ DATABASE PROTECTED &nbsp;•&nbsp; 🔑 MFA READY &nbsp;•&nbsp; 🧱 RATE LIMITING ON &nbsp;•&nbsp; </span><span>🔒 PASSWORDS HASHED WITH BCRYPT &nbsp;•&nbsp; 🛡️ FIREWALL ACTIVE &nbsp;•&nbsp; 🗄️ DATABASE PROTECTED &nbsp;•&nbsp; 🔑 MFA READY &nbsp;•&nbsp; 🧱 RATE LIMITING ON &nbsp;•&nbsp; </span></div></div>
+<script src="script.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>

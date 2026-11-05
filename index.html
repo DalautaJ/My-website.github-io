@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SecureServer.edu | Protect Your Data Server</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="rain"></canvas>
+<div id="prog"></div>
+<nav class="top">
+  <a class="brand" href="index.html">🛡️ Secure<span>Server</span>.edu</a>
+  <div class="links"><a href="#hackers">Hackers</a><a href="#attack">Attacks</a><a href="#threats">Threats</a><a href="#defense">Defense</a><a href="#checklist">Checklist</a><span class="who mono" id="who"></span><a class="btn sm" id="logout" href="/login.html">Logout</a></div>
+</nav>
+
+<header class="hero">
+  <div class="shield">🛡️</div>
+  <h1 class="glitch" data-text="DEFEND THE SERVER">DEFEND THE SERVER</h1>
+  <div class="type" id="type"></div>
+  <p class="sub">An educational guide to how hackers attack data servers, and the layers of defense that stop them. Built for students, beginners and future sysadmins.</p>
+  <div class="cta"><a class="btn" href="#threats">Start Learning</a><a class="btn alt" href="#checklist">Security Checklist</a></div>
+  <div class="term mono"><p>$ sudo ufw status</p><p class="ok">Status: active ✔</p><p>$ fail2ban-client status sshd</p><p class="ok">3 attacker IPs banned ✔</p><p>$ ./scan --threats</p><p class="ok">0 threats found. Server secure ✔</p></div>
+</header>
+
+<section class="wrap reveal" id="hackers">
+  <h2>Who Are Hackers?</h2>
+  <p class="lead">"Hacker" simply means someone who breaks into computer systems. What matters is permission and intent. Hackers are grouped by "hat" colors.</p>
+  <div class="grid">
+    <div class="card"><span class="ic">🎩</span><h3>White Hat</h3><p>Ethical hackers hired to find weaknesses legally, then help fix them. Also called penetration testers.</p><div class="fix">Legal • Permission • Protects</div></div>
+    <div class="card red"><span class="ic">🖤</span><h3>Black Hat</h3><p>Criminals who break in to steal data, money or cause damage.</p><div class="fix" style="color:var(--r)">Illegal • Malicious • Profit</div></div>
+    <div class="card"><span class="ic">🩶</span><h3>Grey Hat</h3><p>Hack without permission but not to cause harm, often reporting the hole afterward. Still illegal.</p><div class="fix" style="color:#ffd23b">No permission • Mixed intent</div></div>
+    <div class="card red"><span class="ic">👶</span><h3>Script Kiddie</h3><p>Beginners who run other people's ready-made tools without understanding them. Still dangerous.</p></div>
+    <div class="card red"><span class="ic">✊</span><h3>Hacktivist</h3><p>Attack sites to push a political or social message, such as defacing pages or leaking data.</p></div>
+    <div class="card red"><span class="ic">🏛️</span><h3>State-Sponsored (APT)</h3><p>Well-funded, patient groups backed by governments, usually after secrets or infrastructure.</p></div>
+    <div class="card"><span class="ic">🔵</span><h3>Blue Team</h3><p>The defenders: monitor, patch and respond to incidents every day.</p></div>
+    <div class="card red"><span class="ic">🔴</span><h3>Red Team</h3><p>Authorized "attackers" who test the blue team's defenses so weaknesses get fixed first.</p></div>
+  </div>
+</section>
+
+<section class="wrap reveal" id="attack">
+  <h2>Anatomy of an Attack</h2>
+  <p class="lead">Most attacks follow similar stages. Understanding them shows you where to stop the attacker, and every stage has a defense.</p>
+  <ol class="steps">
+    <li><h3>Reconnaissance</h3><p>The attacker gathers public information: company websites, employee names on social media, exposed server details.</p><p class="fix">Defense: share less publicly, hide version banners, train staff on oversharing.</p></li>
+    <li><h3>Scanning</h3><p>Automated tools look for open ports, running services and known vulnerabilities.</p><p class="fix">Defense: close unused ports, keep software patched, use an intrusion detection system.</p></li>
+    <li><h3>Gaining Access</h3><p>Entry happens through weak or stolen passwords, phishing, or an unpatched flaw.</p><p class="fix">Defense: MFA, strong passwords, fast patching, email filtering.</p></li>
+    <li><h3>Maintaining Access</h3><p>Once inside, attackers try to stay hidden by creating hidden accounts or backdoors and moving to other machines.</p><p class="fix">Defense: monitor accounts, file integrity checks, network segmentation.</p></li>
+    <li><h3>Covering Tracks</h3><p>They try to erase or alter logs so nobody notices the break-in.</p><p class="fix">Defense: send logs to a separate, protected log server so they can't be wiped.</p></li>
+  </ol>
+</section>
+
+<section class="wrap reveal" id="malware">
+  <h2>Malware Types</h2>
+  <p class="lead">Malicious software comes in many forms. Knowing the differences helps you recognize and respond.</p>
+  <div class="grid">
+    <div class="card red"><span class="ic">🦠</span><h3>Virus</h3><p>Attaches to a file and spreads when that file is opened or shared.</p></div>
+    <div class="card red"><span class="ic">🪱</span><h3>Worm</h3><p>Spreads by itself across networks without needing a user to click anything.</p></div>
+    <div class="card red"><span class="ic">🐴</span><h3>Trojan</h3><p>Pretends to be useful software while secretly doing harm or opening a backdoor.</p></div>
+    <div class="card red"><span class="ic">📹</span><h3>Spyware &amp; Keyloggers</h3><p>Silently record activity and keystrokes to steal passwords and data.</p></div>
+    <div class="card red"><span class="ic">🤖</span><h3>Botnet</h3><p>Many infected machines controlled remotely, often used for DDoS attacks.</p></div>
+    <div class="card red"><span class="ic">⛏️</span><h3>Cryptojacking</h3><p>Secretly uses your server's power to mine cryptocurrency, slowing it down.</p></div>
+  </div>
+</section>
+
+<section class="wrap reveal" id="threats">
+  <h2>Know Your Enemy</h2>
+  <p class="lead">A data server stores valuable information, so attackers constantly probe it. These are the most common attacks, each paired with its best defense.</p>
+  <div class="grid">
+    <div class="card red"><span class="ic">🎣</span><h3>Phishing</h3><p>Fake emails or sites trick people into giving away passwords or running malware.</p><div class="fix">Defense: staff training, MFA, email filtering.</div></div>
+    <div class="card red"><span class="ic">🔑</span><h3>Brute Force</h3><p>Bots try thousands of passwords per minute until one works.</p><div class="fix">Defense: rate limiting, lockouts, long passwords, MFA.</div></div>
+    <div class="card red"><span class="ic">💉</span><h3>SQL Injection</h3><p>Malicious input is slipped into a database query to read or change data.</p><div class="fix">Defense: parameterized queries and input validation.</div></div>
+    <div class="card red"><span class="ic">🌊</span><h3>DDoS</h3><p>A flood of traffic from many machines knocks the server offline.</p><div class="fix">Defense: CDN, traffic filtering, auto-scaling.</div></div>
+    <div class="card red"><span class="ic">🔒</span><h3>Ransomware</h3><p>Malware encrypts your files and demands payment to unlock them.</p><div class="fix">Defense: offline backups, patching, least privilege.</div></div>
+    <div class="card red"><span class="ic">🕳️</span><h3>Unpatched Software</h3><p>Attackers scan for servers running old software with known holes.</p><div class="fix">Defense: regular updates and vulnerability scans.</div></div>
+    <div class="card red"><span class="ic">🕵️</span><h3>Insider Threats</h3><p>A careless or malicious employee with too much access causes a breach.</p><div class="fix">Defense: least privilege, audit logs, access reviews.</div></div>
+    <div class="card red"><span class="ic">👂</span><h3>Man-in-the-Middle</h3><p>Someone secretly intercepts traffic between users and the server.</p><div class="fix">Defense: HTTPS/TLS everywhere, VPN, HSTS.</div></div>
+  </div>
+</section>
+
+<section class="wrap reveal" id="defense">
+  <h2>Defense in Depth</h2>
+  <p class="lead">No single tool is enough. Layer your protections so that if one fails, the next one still stands.</p>
+  <ol class="steps">
+    <li><h3>Firewall &amp; Network Segmentation</h3><p>Allow only the ports you need (for example 443 for HTTPS) and block everything else. Keep the database on a private network that the internet can't reach.</p></li>
+    <li><h3>Patch &amp; Update Everything</h3><p>Enable automatic security updates for the OS, web server, database and libraries. Most breaches use holes that already have a fix.</p></li>
+    <li><h3>Strong Authentication + MFA</h3><p>Use long unique passwords with a password manager, add multi-factor authentication, and prefer SSH keys over passwords. Disable direct <code>root</code> login.</p></li>
+    <li><h3>Encrypt Data Everywhere</h3><p>Use TLS for data in transit and disk or database encryption for data at rest. Store user passwords only as salted hashes (bcrypt or Argon2).</p></li>
+    <li><h3>Least Privilege</h3><p>Give every user and program only the access it needs. A web app shouldn't connect to the database as an admin.</p></li>
+    <li><h3>Monitor &amp; Log</h3><p>Collect logs, alert on strange behavior (many failed logins, odd hours, big downloads), and use tools like fail2ban or an IDS/IPS.</p></li>
+    <li><h3>Backups (3-2-1 Rule)</h3><p>Keep 3 copies of your data, on 2 different media, with 1 stored offsite or offline. Test restores regularly, because a backup you can't restore is useless.</p></li>
+    <li><h3>Secure Configuration</h3><p>Remove default accounts and sample files, hide version banners, and run regular vulnerability scans and penetration tests on systems you own.</p></li>
+  </ol>
+</section>
+
+<section class="wrap reveal" id="checklist">
+  <h2>Server Hardening Checklist</h2>
+  <p class="lead">Tick what your server already does and watch your security score climb.</p>
+  <div class="bar"><i id="fill"></i></div><div id="pct"></div>
+  <label class="check"><input type="checkbox"><span>Firewall enabled, only needed ports open</span></label>
+  <label class="check"><input type="checkbox"><span>Automatic security updates turned on</span></label>
+  <label class="check"><input type="checkbox"><span>Multi-factor authentication for all admins</span></label>
+  <label class="check"><input type="checkbox"><span>SSH keys used, root login and password login disabled</span></label>
+  <label class="check"><input type="checkbox"><span>HTTPS (TLS) enforced on every service</span></label>
+  <label class="check"><input type="checkbox"><span>Data encrypted at rest</span></label>
+  <label class="check"><input type="checkbox"><span>Database not exposed to the public internet</span></label>
+  <label class="check"><input type="checkbox"><span>Logging and failed-login alerts active</span></label>
+  <label class="check"><input type="checkbox"><span>3-2-1 backups, restore tested</span></label>
+  <label class="check"><input type="checkbox"><span>Incident response plan written down</span></label>
+</section>
+
+<section class="wrap reveal" id="response">
+  <h2>If You Get Attacked</h2>
+  <p class="lead">Even good defenses can fail. Have a plan, and follow these four stages calmly.</p>
+  <div class="grid">
+    <div class="card"><span class="ic">🚨</span><h3>1. Detect</h3><p>Confirm the alert is real. Record the time, affected systems and any suspicious activity.</p></div>
+    <div class="card"><span class="ic">🧯</span><h3>2. Contain</h3><p>Isolate affected machines from the network and disable compromised accounts. Don't wipe evidence yet.</p></div>
+    <div class="card"><span class="ic">🧹</span><h3>3. Eradicate</h3><p>Find the root cause, remove malware or backdoors, and patch the hole that let them in.</p></div>
+    <div class="card"><span class="ic">♻️</span><h3>4. Recover</h3><p>Restore from clean backups, change all passwords and keys, monitor closely, then write up lessons learned.</p></div>
+  </div>
+</section>
+
+<footer>
+  <p>🛡️ SecureServer.edu — educational project. Only test security on systems you own or have written permission to test.</p>
+  <p>&copy; 2026 Johannes Dalauta. All rights reserved.</p>
+</footer>
+<div class="modal" id="modal">
+  <div class="mbox">
+    <span class="x" id="mx">✕</span>
+    <div class="mic" id="mic"></div>
+    <h3 id="mt"></h3>
+    <h4>📖 What it means</h4><p id="mm"></p>
+    <h4 id="mh">🛡️ How to protect</h4><ul id="mp"></ul>
+    <button class="btn" id="mclose">Got it</button>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reset Password | SecureServer.edu</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="rain"></canvas>
+<div class="login-page">
+  <div class="box" id="tilt">
+    <i class="beam"></i>
+    <div class="radar"><span class="sweep"></span><b>🛡️</b></div>
+    <h1 class="glitch" data-text="NEW PASSWORD">NEW PASSWORD</h1>
+    <p class="s">Choose a new strong password</p>
+    <form id="resetForm" autocomplete="off">
+      <label for="pw">🔑 New password</label>
+      <div class="field"><input type="password" id="pw" placeholder="8+ characters, letters and numbers" maxlength="72"><span class="eye" id="eye">👁️</span></div>
+      <div class="meter"><i></i></div><div id="mtxt"></div>
+      <label for="pw2">🔁 Confirm new password</label>
+      <input type="password" id="pw2" placeholder="Repeat password" maxlength="72">
+      <div class="err" id="err"></div>
+      <button class="btn" type="submit">SET NEW PASSWORD</button>
+      <p class="links2"><a href="login.html">← Back to login</a></p>
+    </form>
+  </div>
+</div>
+<div class="ticker"><div class="track"><span>🔒 PASSWORDS HASHED WITH BCRYPT &nbsp;•&nbsp; 🛡️ FIREWALL ACTIVE &nbsp;•&nbsp; 🗄️ DATABASE PROTECTED &nbsp;•&nbsp; 🔑 MFA READY &nbsp;•&nbsp; 🧱 RATE LIMITING ON &nbsp;•&nbsp; </span><span>🔒 PASSWORDS HASHED WITH BCRYPT &nbsp;•&nbsp; 🛡️ FIREWALL ACTIVE &nbsp;•&nbsp; 🗄️ DATABASE PROTECTED &nbsp;•&nbsp; 🔑 MFA READY &nbsp;•&nbsp; 🧱 RATE LIMITING ON &nbsp;•&nbsp; </span></div></div>
+<script src="script.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>
